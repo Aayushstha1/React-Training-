@@ -31,7 +31,7 @@ This is a **React-based** project that showcases modern front-end development te
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Aayushstha1/your-repo-name.git
+   git clone https://github.com/Aayushstha1/React-Training-
    ```
 2. Navigate to the project folder:
    ```bash
