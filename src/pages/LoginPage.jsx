@@ -6,11 +6,22 @@ const reducer = (state, action)=>{
             ...state,
             username: action.payload
         }
+        
+        }
+        else  {
+            if(action.hello === "password"){
+                window.alert("Insecure password");
+                return state;
+            }
+            else {
+                
+            return {...state, password: action.hello};
     }
+        }
 };
 const initialState = {
     username: "Aayush",
-    password: "Aayush123",
+    password: "Aayush12345667890",
 };
 
 export default function LoginPage() {
@@ -25,7 +36,7 @@ export default function LoginPage() {
         <input type="text" placeholder="Username"  value={formData.username}  onChange={(e) =>dispatch({type: "username", payload: e.target.value})}/>
         </div>
         <div>
-        <input type="password" placeholder="Password" value={formData.password}  onChange={(e)=>dispatch({type: "password", payload: e.target.value})}/>
+        <input type="password" placeholder="Password" value={formData.password}  onChange={(e)=>dispatch({hello: e.target.value})}/>
         </div>
         <div>
         <button type="submit">Login</button>
