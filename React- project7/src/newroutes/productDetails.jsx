@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css';
 
 function ProductDetails() {
@@ -35,16 +35,21 @@ function ProductDetails() {
         }
     }, [id]);
 
+    const handleAddToCart = () => {
+        // You can implement cart logic here
+        alert(`${product.title} added to cart!`);
+        //  Implement actual cart functionality
+    };
+
     if (loading) return <div className="loading">Loading product details...</div>;
     if (error) return <div className="error">Error: {error}</div>;
     if (!product) return <div className="error">Product not found</div>;
 
     return (
         <div className="product-details-container">
-            <button className="back-button" onClick={() => navigate(-1)}>
+            <button className="back-button" onClick={() => navigate('/products')}>
                 ← Back to Products
             </button>
-            <h1>This is single product page!!!</h1>
             <div className="product-details">
                 <img src={product.image} alt={product.title} className="product-details-image" />
                 <div className="product-details-info">
@@ -57,13 +62,20 @@ function ProductDetails() {
                     <div className="product-details-category">
                         Category: {product.category}
                     </div>
-                </div>
-                <div>
-                    <Link to="/reviews" className="view-details-btn">
-                        Review </Link>
-                    <Outlet />
+                    <div className="button-group">
+                        <Link to={`/products/${id}/reviews`} className="view-details-btn">
+                            View Reviews
+                        </Link>
+                        <button 
+                            onClick={handleAddToCart}
+                            className="add-to-cart-btn"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
+            <Outlet />
         </div>
     );
 }

@@ -1,14 +1,14 @@
 export default App;
 
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./newroutes/About";
 import Contactus from "./newroutes/Contactus";
 import Home from "./newroutes/Home";
 import Layout from "./newroutes/Layout";
-import Products from "./newroutes/products";
 import Login from "./newroutes/logout";
+import ProductDetails from "./newroutes/productDetails";
+import Products from "./newroutes/products";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contactus" element={<Contactus />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetails />} />
           <Route path="logout" element={<Login />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
