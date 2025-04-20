@@ -3,6 +3,7 @@ export default App;
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./newroutes/About";
+import CartPage from "./newroutes/CartPage";
 import Contactus from "./newroutes/Contactus";
 import Home from "./newroutes/Home";
 import Layout from "./newroutes/Layout";
@@ -23,6 +24,7 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetails />} />
           <Route path="login" element={<Login />} />
+          <Route path="CartPage" element={<CartPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

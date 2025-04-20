@@ -62,6 +62,17 @@ export default function Layout() {
               Login
             </NavLink>
           </li>
+            <li>
+          <NavLink
+              to="/CartPage"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-green-800" : ""
+              }
+            >
+              Cart
+            </NavLink>
+            </li>
+        
         </ul>
       </nav>
       <Outlet />
