@@ -49,7 +49,7 @@ import { useNavigate } from "react-router-dom";
 //   );
 // }
 
-export default function logout() {
+export default function login() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -86,8 +86,6 @@ export default function logout() {
   }
   
   
-  
-  
       e.target.reset();
     };
     return (
@@ -100,6 +98,7 @@ export default function logout() {
           <div>
             <input type="password" name="password" placeholder="password" />
           </div>
+          <button type="">Reset</button><br />
           <button type="submit">Login</button>
         </form>
       </div>

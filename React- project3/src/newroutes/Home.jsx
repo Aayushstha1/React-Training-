@@ -8,7 +8,7 @@ function Home() {
         </div>
       );
     };
-git i
+
   
 
 export default Home

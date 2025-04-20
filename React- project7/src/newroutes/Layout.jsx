@@ -54,12 +54,12 @@ export default function Layout() {
             </li>
             <li>
           <NavLink
-              to="/logout"
+              to="/login"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-green-800" : ""
               }
             >
-              Logout
+              Login
             </NavLink>
           </li>
         </ul>
