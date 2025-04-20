@@ -10,11 +10,11 @@ import Layout from "./newroutes/Layout";
 import Login from "./newroutes/login";
 import ProductDetails from "./newroutes/productDetails";
 import Products from "./newroutes/products";
-
+          
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Routes> 
         {/* Parent */}
         <Route path="/" element={<Layout />}>
           {/* Child Routes */}

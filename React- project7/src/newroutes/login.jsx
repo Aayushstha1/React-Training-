@@ -105,3 +105,27 @@ export default function login() {
     );
   }
   
+
+  export const useCheckAuth = (navigateTo = false) => {
+    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const hasToken = localStorage.getItem("token");
+    const handleLogout = () => {
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+    };
+    useEffect(() => {
+      if (!hasToken) {
+        if (navigateTo) {
+          navigate("/login");
+        }
+        setIsLoggedIn(false);
+      } else {
+        if (navigateTo) {
+          navigate("/product");
+        }
+        setIsLoggedIn(true);
+      }
+    }, [hasToken, navigate, navigateTo]);
+    return { isLoggedIn, handleLogout };
+  };
