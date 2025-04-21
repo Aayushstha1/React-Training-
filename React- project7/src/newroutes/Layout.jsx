@@ -7,11 +7,7 @@ export default function Layout() {
       <nav className="bg-red-500 text-white flex p-4">
         <h1 className="">My store</h1>
         <ul className="flex gap-4 ml-auto">
-          {/* {
-          links.map(({name, path}) => (
-          key={path}>))
-
-          } */}
+        
           <li>
             <NavLink
               to="/"

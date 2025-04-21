@@ -66,12 +66,7 @@ function ProductDetails() {
                         <Link to={`/products/${id}/reviews`} className="view-details-btn">
                             View Reviews
                         </Link>
-                        <button 
-                            onClick={handleAddToCart}
-                            className="add-to-cart-btn"
-                        >
-                            Add to Cart
-                        </button>
+                       
                     </div>
                 </div>
             </div>
@@ -81,3 +76,22 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
+
+
+const AddToCartButon = () => {
+    const { id } = useParams();
+
+
+  const handleAddToCart = () => {
+        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    return (
+        <button  onClick={handleAddToCart} className="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600">
+            Add to Cart
+        </button>
+
+    );
+
+}
+}
+
+
